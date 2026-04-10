@@ -1,0 +1,16 @@
+# Desarrollo con Node 24 — hot reload con volumen montado
+FROM node:24-alpine
+
+# Fuentes para Sharp (SVG→JPG): sin esto el texto del gráfico de señales no se renderiza
+RUN apk add --no-cache fontconfig ttf-dejavu
+
+WORKDIR /app
+
+COPY package.json package-lock.json* ./
+RUN npm ci
+
+COPY . .
+
+EXPOSE 4000
+
+CMD ["npm", "run", "dev"]

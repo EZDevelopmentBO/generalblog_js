@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Environment (keep examples and test template)
+.env
+.env.local
+.env.*.local
+!.env.example
+# Nunca versionar plantillas locales con credenciales; copiar desde .env.example
+.env.test
+
+# Uploads (user content at runtime)
+backend/uploads/
+backend/storage/
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Docker
+.docker/
+
+# Misc
+*.pid
+.cache/
+
+# Volcados locales / scripts antiguos (no versionar)
+backups/

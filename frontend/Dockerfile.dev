@@ -1,0 +1,13 @@
+# Desarrollo con Node 24 — Vite dev con hot reload
+FROM node:24-alpine
+
+WORKDIR /app
+
+COPY package.json package-lock.json* ./
+RUN npm ci
+
+COPY . .
+
+EXPOSE 5173
+
+CMD ["npm", "run", "dev"]

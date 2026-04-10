@@ -1,0 +1,12 @@
+# SPA: todas las rutas que no sean archivo o carpeta existente → index.html
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Si es un archivo o directorio que existe, servirlo
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Si no, enviar a index.html (el router resuelve /app, /noticias, /paginas, etc.)
+  RewriteRule ^ index.html [L]
+</IfModule>
